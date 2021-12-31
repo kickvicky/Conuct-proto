@@ -1,22 +1,23 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Typography, AppBar } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-
 import VideoPlayer from './components/VideoPlayer';
 import Options from './components/options';
 import Notifications from './components/Notifications';
+import TextToSpeech from './components/TextToSpeech'
+import { SocketContext } from './SocketContext';
 
 const useStyles = makeStyles((theme) => ({
     appBar: {
-        borderRadius: 15,
+        borderRadius: 25,
         margin: '30px 100px',
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
         width: '600px',
-        border: '2px solid black',
-
+        border: '3px solid #997690',
+        color: '#bd9b3e',
         [theme.breakpoints.down('xs')]: {
             width: '90%',
         },
@@ -31,17 +32,22 @@ const useStyles = makeStyles((theme) => ({
 
 const App = () => {
     const classes = useStyles();
+    const { answerCall, call, callAccepted } = useContext(SocketContext);
     return (
         <div className={classes.wrapper}>
             <AppBar className={classes.appBar} position='static' color='inherit'>
                 <Typography variant='h2' align='center'>
-                    Conuct
+                    <b id='head'>CONUCT ⚓</b>
+                    {/* 🔗 */}
                 </Typography>
             </AppBar>
             <VideoPlayer />
             <Options>
                 <Notifications />
             </Options>
+            {callAccepted && (
+                <TextToSpeech />
+            )}
         </div>
     )
 }

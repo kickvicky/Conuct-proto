@@ -1,0 +1,112 @@
+/*  *{
+    padding: 0;
+    margin: 0;
+    background-color: #ae937b;
+}
+
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.regForm{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    gap: 10px;
+} 
+html, body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 400;
+    min-height: 100vh;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* background-color: black;
+} */
+/*
+h1 {
+    margin: 0;
+    padding: 1rem;
+}
+
+.registerForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: clamp(340px, 80%, 410px);
+}
+
+.registerForm input[type="text"], .registerForm input[type="email"], .registerForm input[type="password"]{
+    font-size: 1.5rem;
+    padding: 0.2em 0.5em;
+    border: 1px solid #44444444;
+    border-radius: 6px;
+    filter: drop-shadow(0 0 2px #44444444);
+    outline: none;
+    
+}
+
+.registerForm input[type="submit"] {
+    background-color: #1a73e8;
+    color: white;
+    font-size: 1.5rem;
+    padding: 0.4em;
+    border: 1px solid #1a73e8;
+    border-radius: 5px;
+}
+
+.registerForm input[type="submit"]:hover, .registerForm input[type="submit"]:focus  {
+    transform: scale(1.05);
+    transition: all 0.05 ease-out;
+}
+
+#google {
+  position: relative;
+  border-top: 100px solid #EA4335;
+  border-right: 100px solid #4285F4;
+  border-bottom: 100px solid #34A853;
+  border-left: 100px solid #FBBC05;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  width: 300px;
+  height: 300px;
+  padding: 0;
+  margin: 10vh auto 0;
+}
+
+#google::before {
+  content: "";
+  z-index: 100;
+  position: absolute;
+  top: 50%;
+  right: -95px;
+  transform: translateY(-50%);
+  width: 245px;
+  height: 100px;
+  background: #4285F4;
+}
+
+#google::after {
+  content: "";
+  z-index: 101;
+  position: absolute;
+  border-top: 200px solid transparent;
+  border-right: 200px solid #FFFFFF;
+  top: -100px;
+  right: -100px;
+  width: 0;
+  height: 0;
+} */

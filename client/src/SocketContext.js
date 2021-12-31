@@ -1,11 +1,12 @@
 import React, { createContext, useState, useRef, useEffect } from 'react';
 import { io } from 'socket.io-client';
 import Peer from 'simple-peer';
+import { TramRounded } from '@material-ui/icons';
 
 const SocketContext = createContext();
 
-const socket = io('https://testing-conuct.herokuapp.com/');
-//https://warm-wildwood-81069.herokuapp.com
+const socket = io('https://conuct-ssv.herokuapp.com/');
+//https://conuct-ssv.herokuapp.com/
 
 const ContextProvider = ({ children }) => {
 
@@ -21,7 +22,7 @@ const ContextProvider = ({ children }) => {
     const connectionRef = useRef();
 
     useEffect(() => {
-        navigator.mediaDevices.getUserMedia({ video: true, audio: true })
+        navigator.mediaDevices.getUserMedia({ video: TramRounded })
             .then((currentStream) => {
                 setStream(currentStream);
 

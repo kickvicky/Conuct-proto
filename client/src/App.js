@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
 
 const App = () => {
     const classes = useStyles();
-    const { answerCall, call, callAccepted } = useContext(SocketContext);
+    const { callAccepted } = useContext(SocketContext);
     return (
         <div className={classes.wrapper}>
             <AppBar className={classes.appBar} position='static' color='inherit'>
@@ -42,12 +42,12 @@ const App = () => {
                 </Typography>
             </AppBar>
             <VideoPlayer />
-            <Options>
-                <Notifications />
-            </Options>
             {callAccepted && (
                 <TextToSpeech />
             )}
+            <Options>
+                <Notifications />
+            </Options>
         </div>
     )
 }

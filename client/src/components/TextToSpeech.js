@@ -9,6 +9,8 @@ mic.continuous = true
 mic.interimResults = true
 mic.lang = 'en-US'
 
+
+
 const TextToSpeech = () => {
   const [isListening, setIsListening] = useState(false)
   const [note, setNote] = useState(null)
@@ -21,18 +23,18 @@ const TextToSpeech = () => {
   const handleListen = () => {
     if (isListening) {
       mic.start()
-      mic.onend = () => {
-        console.log('continue..')
-        mic.start()
-      }
+      // mic.onend = () => {
+      //   console.log('continue..')
+      //   mic.start()
+      // }
     } else {
       mic.stop()
-      mic.onend = () => {
-        console.log('Stopped Mic on Click')
-      }
+      // mic.onend = () => {
+      //   console.log('Stopped Mic on Click')
+      // }
     }
     mic.onstart = () => {
-      console.log('Mics on')
+      // console.log('Mics on')
     }
 
     mic.onresult = event => {
@@ -53,12 +55,19 @@ const TextToSpeech = () => {
     setNote('')
   }
 
+  const downloadTxtFile = () => {
+    const element = document.createElement("a");
+    const file = new Blob(savedNotes, { type: 'text/plain' });
+    element.href = URL.createObjectURL(file);
+    element.download = "MinOfMeet.txt";
+    document.body.appendChild(element); // Required for this to work in FireFox
+    element.click();
+  }
+
   return (
     <>
-      <h1>Voice Notes</h1>
       <div className="container">
         <div className="box">
-          <h2>Caption</h2>
           {isListening ? <span>🎙️</span> : <span>🛑🎙️</span>}
           <button onClick={handleSaveNote} disabled={!note}>
             Save Note
@@ -69,8 +78,10 @@ const TextToSpeech = () => {
           <br />
           <p>{note}</p>
         </div>
-        <div className="box">
+        <div className="box" id='notes'>
           <h2>Notes 📝</h2>
+          {/* <input id="myInput" /> */}
+          <button onClick={downloadTxtFile}>Download Notes</button>
           <br />
           {savedNotes.map(n => (
             <p key={n}>{n}</p>

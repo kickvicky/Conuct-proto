@@ -22,7 +22,7 @@ const ContextProvider = ({ children }) => {
     const connectionRef = useRef();
 
     useEffect(() => {
-        navigator.mediaDevices.getUserMedia({ video: TramRounded })
+        navigator.mediaDevices.getUserMedia({ video: TramRounded, audio: true })
             .then((currentStream) => {
                 setStream(currentStream);
 
